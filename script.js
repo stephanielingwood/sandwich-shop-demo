@@ -7,39 +7,58 @@
 // "turkey", "pepperjack", "wheat"
 // 'Here is your tasty turkey and pepperjack sandwich on wheat bread.'
 
-                        // parameters 
-function makeSandwich (meat, cheese, bread) {
+// parameters
+function makeSandwich(meat, cheese, bread) {
   // do work: construct a string describing the item they ordered (e.g. a sandwich, chips, etc.)
   var newSandwich = 'Here is your tasty ' + meat + ' and ' + cheese + ' sandwich on ' + bread;
-  
+
   // using that string, construct a bit of html that can placed in the site
   var sandwichHtml = '<p>' + newSandwich + '</p>';
-  
-  // now, set the outputs: 
-  return sandwichHtml; 
+
+  // now, set the outputs:
+  return sandwichHtml;
 }
 
-// prompt the user for what they want in their order
-var kindOfMeat = prompt('what kind of meat do you want on your sandwich?');
-var kindOfCheese = prompt('what kind of cheese do you want?');
-var kindOfBread = prompt('what kind of bread do you want on your sandwich?');
+var numberOfSandwichesToMake = prompt('How many sandwiches do you want to order?');
+// var counter = 0;
 
-var sandwich = makeSandwich(kindOfMeat, kindOfCheese, kindOfBread);
+// while (counter < numberOfSandwichesToMake) {
+//   // prompt the user for what they want in their order
+//   var kindOfBread = prompt('what kind of bread do you want on your sandwich?');
 
-// then, make that bit of hmtl show up in the site
-document.write(sandwich);
+//   while (kindOfBread !== 'wheat' && kindOfBread !== 'lettuce') {
+//     kindOfBread = prompt('Sorry, you need to choose wheat or lettuce');
+//   }
 
-var wantsAnother = prompt('Do you want another sandwich?');
+//   var kindOfMeat = prompt('what kind of meat do you want on your sandwich?');
+//   var kindOfCheese = prompt('what kind of cheese do you want?');
 
-if (wantsAnother === 'yes') {
+//   var sandwich = makeSandwich(kindOfMeat, kindOfCheese, kindOfBread);
+
+//   // then, make that bit of hmtl show up in the site
+//   document.write(sandwich);
+
+//   // counter = counter + 1;
+//   // this ^^^ means the same thing as the line below
+//   counter++;
+// }
+
+
+// this for loop, below, is a shorthand syntax of the while-loop-with-a-counter, above
+
+for (var i = 0; i < numberOfSandwichesToMake; i++) {
   // prompt the user for what they want in their order
-  var meat2 = prompt('what kind of meat do you want on your second sandwich?');
-  var cheese2 = prompt('what kind of cheese do you want on your second sandwich?');
-  var bread2 = prompt('what kind of bread do you want on your second sandwich?');
+  var kindOfBread = prompt('what kind of bread do you want on your sandwich?');
 
-  var secondSandwich = makeSandwich(meat2, cheese2, bread2);
+  while (kindOfBread !== 'wheat' && kindOfBread !== 'lettuce') {
+    kindOfBread = prompt('Sorry, you need to choose wheat or lettuce');
+  }
+
+  var kindOfMeat = prompt('what kind of meat do you want on your sandwich?');
+  var kindOfCheese = prompt('what kind of cheese do you want?');
+
+  var sandwich = makeSandwich(kindOfMeat, kindOfCheese, kindOfBread);
 
   // then, make that bit of hmtl show up in the site
-  document.write(secondSandwich);
+  document.write(sandwich);
 }
-
